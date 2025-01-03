@@ -1,11 +1,19 @@
 # Kuavo选拔任务
 
-## 任务目的
+## 1 基础知识了解
+- 至少掌握aelos&roban组任务所需的全部技术栈
+- ETH **Robot Dynamics Lecture Note**
+- 阅读A Unified MPC Framework for Whole-Body Dynamic Locomotion and Manipulation，了解MPC&WBC控制框架基本原理 [Link](https://arxiv.org/abs/2103.00946)
+--- 
+
+## 2 运动控制框架实战
+
+### 2.1 任务目的
 
 - 熟悉基于MPC（Model Predictive Control）和WBC（Whole Body Control）机器人控制框架
 - 了解git、python、C++、ROS、CMake
 
-## 任务内容
+### 2.2 任务内容
 
 - 项目源码及简介 [Github](https://github.com/pocketxjl/humanoid-control) & [Zhihu](https://zhuanlan.zhihu.com/p/686462478)
 
@@ -21,7 +29,7 @@
 
 - 有能力的同学可以实现自动切换步态的功能，即机器人在站立状态下向`/cmd_vel`发送不为 0 的速度可以自动向前走，同时发送为 0 的速度可以自动停止
 
-## 任务提示
+### 2.3 任务提示
 
 - 由于本项目并不完善，所以如果你到了Getting Start部分，请你执行其中的命令，也就是在编译完后，启动`humanoid_dummy`功能包下的`legged_robot_sqp.launch`文件，该文件不会启动状态估计和wbc模块，但不妨碍大家阅读代码理解框架
 
@@ -44,4 +52,13 @@
     - 在`legged_robot_sqp.launch`种添加启动该节点的语句
     - 手动在终端启动该节点
   - `humanoid_target_trajectories_publisher`在`load_normal_controller.launch`文件中有提及，请参考之
+--- 
 
+## 3 感知部分内容
+1. 跑通yolo模型，完成基础的图像识别
+2. 尝试使用自己的数据集进行训练
+3. 加入卡尔曼滤波，稳定输出
+--- 
+
+## 4 补充说明
+- 我们鼓励有一定基础的kuavo组同学在过程中使用ai工具，但你至少要能看懂ai的代码，明白程序背后的逻辑

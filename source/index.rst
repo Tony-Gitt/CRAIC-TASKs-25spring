@@ -10,5 +10,5 @@
    :maxdepth: 1
    
    readme.md
-   aelos_tasks/index.rst
+   aelostask.md
    kuavotask.md
