@@ -1,5 +1,7 @@
 # Kuavo选拔任务
 
+> ***NOTE：kuavo赛道任务为小组任务，每个组内成员共同完成所有任务，任务成果提交一份即可，但请在提交仓库的readme文档中注明你们组内的任务分配情况***
+
 ## 1 基础知识了解
 - 至少掌握aelos&roban组任务所需的全部技术栈
 - ETH **Robot Dynamics Lecture Note**
@@ -45,19 +47,27 @@
 - 安装ros有一个自动化的脚本，参考[小鱼的一键安装系列 | 鱼香ROS](https://fishros.org.cn/forum/topic/20/小鱼的一键安装系列)
 
 - 一些可能会踩的坑：
-
+  - 开始本项目的时候需要先创建一个ros工作空间，然后将需要clone的仓库clone到workspace/src下
   - 如遇到`permission denied`报错，则需要进入root权限下执行命令
   - 如遇到`xxx.launch is neither a launch file in package`，则是因为没有`source /{path_to}/devel/setup.bash`，具体是`setup.bash`还是`setup.zsh`依赖于你的shell
   - 由于我们启动的是`legged_robot_sqp.launch`，该文件并不会启动`humanoid_target_trajectories_publisher`节点，所以有两种方法可以启动该节点：
-    - 在`legged_robot_sqp.launch`种添加启动该节点的语句
+    - 在`legged_robot_sqp.launch`中添加启动该节点的语句
     - 手动在终端启动该节点
   - `humanoid_target_trajectories_publisher`在`load_normal_controller.launch`文件中有提及，请参考之
 --- 
 
-## 3 感知部分内容
-1. 跑通yolo模型，完成基础的图像识别
-2. 尝试使用自己的数据集进行训练
-3. 加入卡尔曼滤波，稳定输出
+## 3 视觉感知
+#### 3.1 跑通yolo模型，完成基础的图像识别功能
+  - yolo版本不限，能完成目标即可
+  - 将yolo识别到的物体在视频中的像素坐标发布到ros话题中
+#### 3.2 尝试使用自己的数据集进行训练
+  - 根据去年比赛经验，我们提供一份按钮数据集，你可以使用这个数据集进行训练，并将识别效果和模型提交
+  - 不需要实现强干扰情况下很准确的区分，能在给出数据集类似的条件下完成识别任务即可
+#### 3.3 加入卡尔曼滤波，增强跟踪效果
+  - 为了防止yolo暂时失去跟踪或者摄像头暂时被遮挡的情况，可以尝试在yolo中加入卡尔曼滤波，可以自行搜索相关开源实现
+##### 效果演示：
+<video src="_static/32_1735871085.mp4" controls="controls" style="width: 50%"></video>
+
 --- 
 
 ## 4 补充说明

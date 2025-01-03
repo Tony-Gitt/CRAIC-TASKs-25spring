@@ -7,7 +7,7 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'ircdoc'
-copyright = '2024, liujunjie'
+copyright = '2025, liujunjie & zhuhelin'
 author = 'liujunjie'
 release = '1.0'
 

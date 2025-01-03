@@ -1,13 +1,15 @@
 # Aelos&Roban 选拔任务
 
+> ***NOTE：aelos&roban赛道任务为单人任务，每人均需提交一份自己完成的代码和结果展示***
+
 ## 1 任务要求
 #### 1.1 基本任务
 ***综合使用Linux、python、ROS、OpenCV等，完成简单的图像处理与发布***
 1. 对下列图像进行处理，通过python的opencv库函数实现将图像中的红色小球框选并输出其坐标
 原图及识别效果图：
 
-<img src="https://ultramarine-image.oss-cn-beijing.aliyuncs.com/img/image-20221027164357622.png" width="300"/>
-<img src="https://ultramarine-image.oss-cn-beijing.aliyuncs.com/img/image-20221027164345370.png" width="300"/>
+    <img src="https://ultramarine-image.oss-cn-beijing.aliyuncs.com/img/image-20221027164357622.png" width="300"/>
+    <img src="https://ultramarine-image.oss-cn-beijing.aliyuncs.com/img/image-20221027164345370.png" width="300"/>
 
 2. 自主编写代码完成以下两个文件 img_pub.py（发布） 与 img_sub.py(订阅)，对[给定图像](https://ultramarine-image.oss-cn-beijing.aliyuncs.com/img/image-20221027164357622.png)进行处理
 - img_pub.py文件通过cv_bridge获取摄像头图像并通过ros的publisher发布图像
@@ -16,7 +18,9 @@
 
 #### 1.2 进阶任务
 ***使用yolo***
-1. 完成一个yolo识别程序，并可以将识别到的某个物体的位置信息发布到ros节点中，
+- 跑通yolo识别框架，完成基础的图像识别功能
+  - yolo版本不限，能完成目标即可
+  - 将yolo识别到的物体在视频中的像素坐标通过ros话题发布
 
 #### 1.3 SLAM任务
 ***Roban赛道定位算法*** 
@@ -28,8 +32,14 @@
 ## 2 参考学习路线
 #### 2.1 Python
 - 只需要懂Python的基础语法，可以不必学精通，在实践的过程中逐步补全python知识体系，在实践中学习的效率更高效
+- 学习路线有如下几种，根据自己偏好选择，如果想比较系统的学习推荐看书或者看b站长视频
+  - 书籍：《Python编程 从入门到实践》(PDF会放在群里)
+  - b站视频：[超基础Python教程](https://www.bilibili.com/video/BV1c4411e77t/?spm_id_from=333.337.search-card.all.click)（选了一个时长较短的视频）
+  - 菜鸟教程：[Python 3 教程](https://www.runoob.com/python3/python3-tutorial.html)
+  - 官方文档：[Python 3.9.7 documentation](https://docs.python.org/3/)
+- 相信每一位HITer都会使用gpt，所以简单入门即可上手实操，看不懂的gpt，不会写的gpt
 #### 2.2 Linux
-- 学会linux操作系统基础知识，会linux操作系统使用方法
+- 学会linux操作系统基础知识，会linux操作系统使用方法，熟悉一些基础的终端命令即可，可参考教程：[Linux入门教程](https://blog.csdn.net/bigbangbangbang1/article/details/131575669)，细节不用深究，像一些参数的使用，需要的时候再查阅即可，不然也很快会忘
 #### 2.3 ROS1
 - 教程：[【古月居】古月·ROS入门21讲 | 一学就会的ROS机器人入门教程_哔哩哔哩_bilibili](https://www.bilibili.com/video/BV1zt411G7Vn/?spm_id_from=333.337.search-card.all.click&vd_source=7f5cce988a73a29b0bdf6ea667a08dba)
 - 理清ROS框架中的命令和功能
