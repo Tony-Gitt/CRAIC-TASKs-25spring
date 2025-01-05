@@ -18,7 +18,7 @@
 ### 2.2 任务内容
 
 - 项目源码及简介 [Github](https://github.com/pocketxjl/humanoid-control) & [Zhihu](https://zhuanlan.zhihu.com/p/686462478)
-
+  - 需要checkout到特定的 commit (0804a9d52fc09aa8e3bbcd55742b2d3fc0162718) 进行编译
 - 跑通项目中提到的ocs2的四足机器人例子，如下图所示，并尝试使用如第二张图的终端控制其移动到指定位置，明白其中参数的含义
 
 ![legged_robot](_static/legged_robot.gif)
